@@ -17,7 +17,7 @@ myApp.factory('GitHub', function($http) {
     if (this.busy) return;
     this.busy = true;
 
-    var url = "http://api.github.com/repos/musescore/MuseScore/commits?callback=JSON_CALLBACK&top=master";
+    var url = "https://api.github.com/repos/musescore/MuseScore/commits?callback=JSON_CALLBACK&top=master";
     if (this.lastsha !== '')
       url += "&last_sha=" + this.lastsha;
     $http.jsonp(url).success(function(data) {
